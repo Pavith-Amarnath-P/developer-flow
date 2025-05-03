@@ -148,28 +148,28 @@
 }
 
 @utility background-light850_dark100 {
-  background-color: var(--light-850);
+  background-color: var(--color-light-850);
   @variant dark {
-    background-color: var(--dark-100);
+    background-color: var(--color-dark-100);
   }
 }
 
 @utility background-light900_dark200 {
-  background-color: var(--light-900);
+  background-color: var(--color-light-900);
   @variant dark {
-    background-color: var(--dark-200);
+    background-color: var(--color-dark-200);
   }
 }
 
 @utility background-light900_dark300 {
-  background-color: var(--light-900);
+  background-color: var(--color-light-900);
   @variant dark {
-    background-color: var(--dark-300);
+    background-color: var(--color-dark-300);
   }
 }
 
 @utility background-light800_darkgradient {
-  background-color: var(--light-800);
+  background-color: var(--color-light-800);
   @variant dark {
     background: linear-gradient(
       232deg,
@@ -180,149 +180,149 @@
 }
 
 @utility background-light800_dark400 {
-  background-color: var(--light-800);
+  background-color: var(--color-light-800);
   @variant dark {
-    background-color: var(--dark-400);
+    background-color: var(--color-dark-400);
   }
 }
 
 @utility background-light700_dark400 {
-  background-color: var(--light-700);
+  background-color: var(--color-light-700);
   @variant dark {
-    background-color: var(--dark-400);
+    background-color: var(--color-dark-400);
   }
 }
 
 @utility background-light700_dark300 {
-  background-color: var(--light-700);
+  background-color: var(--color-light-700);
   @variant dark {
-    background-color: var(--dark-300);
+    background-color: var(--color-dark-300);
   }
 }
 
 @utility background-light800_dark300 {
-  background-color: var(--light-800);
+  background-color: var(--color-light-800);
   @variant dark {
-    background-color: var(--dark-300);
+    background-color: var(--color-dark-300);
   }
 }
 
 @utility background-light800_dark200 {
-  background-color: var(--light-800);
+  background-color: var(--color-light-800);
   @variant dark {
-    background-color: var(--dark-200);
+    background-color: var(--color-dark-200);
   }
 }
 
 @utility background-dark400_light900 {
   @variant dark {
-    background-color: var(--dark-400);
+    background-color: var(--color-dark-400) !important;
   }
-  background-color: var(--light-900);
+  background-color: var(--color-light-900) !important;
 }
 
 @utility text-dark100_light900 {
-  color: var(--dark-100);
+  color: var(--color-dark-100);
   @variant dark {
-    color: var(--light-900);
+    color: var(--color-light-900);
   }
 }
 
 @utility text-dark200_light900 {
-  color: var(--dark-200);
+  color: var(--color-dark-200);
   @variant dark {
-    color: var(--light-900);
+    color: var(--color-light-900);
   }
 }
 
 @utility text-dark200_light800 {
-  color: var(--dark-200);
+  color: var(--color-dark-200);
   @variant dark {
-    color: var(--light-800);
+    color: var(--color-light-800);
   }
 }
 
 @utility text-dark300_light700 {
-  color: var(--dark-300);
+  color: var(--color-dark-300);
   @variant dark {
-    color: var(--light-700);
+    color: var(--color-light-700);
   }
 }
 
 @utility text-dark400_light700 {
-  color: var(--dark-400);
+  color: var(--color-dark-400);
   @variant dark {
-    color: var(--light-700);
+    color: var(--color-light-700);
   }
 }
 
 @utility text-dark500_light700 {
-  color: var(--dark-500);
+  color: var(--color-dark-500);
   @variant dark {
-    color: var(--light-700);
+    color: var(--color-light-700);
   }
 }
 
 @utility text-dark500_light500 {
-  color: var(--dark-500);
+  color: var(--color-dark-500);
   @variant dark {
-    color: var(--light-500);
+    color: var(--color-light-500);
   }
 }
 
 @utility text-dark500_light400 {
-  color: var(--dark-500);
+  color: var(--color-dark-500);
   @variant dark {
-    color: var(--light-400);
+    color: var(--color-light-400);
   }
 }
 
 @utility text-dark300_light900 {
-  color: var(--dark-300);
+  color: var(--color-dark-300);
   @variant dark {
-    color: var(--light-900);
+    color: var(--color-light-900);
   }
 }
 
 @utility text-dark400_light800 {
-  color: var(--dark-400);
+  color: var(--color-dark-400);
   @variant dark {
-    color: var(--light-800);
+    color: var(--color-light-800);
   }
 }
 
 @utility text-light400_light500 {
-  color: var(--light-400);
+  color: var(--color-light-400);
   @variant dark {
-    color: var(--light-500);
+    color: var(--color-light-500);
   }
 }
 
 @utility text-dark400_light500 {
-  color: var(--dark-400);
+  color: var(--color-dark-400);
   @variant dark {
-    color: var(--light-500);
+    color: var(--color-light-500);
   }
 }
 
 @utility text-dark400_light900 {
-  color: var(--dark-400);
+  color: var(--color-dark-400);
   @variant dark {
-    color: var(--light-900);
+    color: var(--color-light-900);
   }
 }
 
 @utility light-border {
-  border-color: var(--light-800);
+  border-color: var(--color-light-800);
   @variant dark {
-    border-color: var(--dark-300);
+    border-color: var(--color-dark-300);
   }
 }
 
 @utility light-border-2 {
-  border-color: var(--light-700);
+  border-color: var(--color-light-700);
   @variant dark {
-    border-color: var(--dark-400);
+    border-color: var(--color-dark-400);
   }
 }
 
