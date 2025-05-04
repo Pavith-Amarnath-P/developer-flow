@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import QuestionCard from "@/components/cards/QuestionCard";
+import HomeFilter from "@/components/filters/HomeFilter";
 import LocalSearch from "@/components/search/LocalSearch";
 import { Button } from "@/components/ui/button";
 import { ROUTES } from "@/constants/routes";
@@ -23,11 +25,16 @@ const questions = [
         name: "javascript",
       },
     ],
-    author: { _id: "1", name: "John Doe" },
-    upVotes: 10,
+    author: {
+      _id: "1",
+      name: "John Doe",
+      image:
+        "https://static.vecteezy.com/system/resources/thumbnails/002/002/403/small/man-with-beard-avatar-character-isolated-icon-free-vector.jpg",
+    },
+    upvotes: 10,
     answers: 5,
     views: 100,
-    createdAt: new Date(),
+    createdAt: new Date("2018-01-01"),
   },
   {
     _id: "2",
@@ -43,8 +50,13 @@ const questions = [
         name: "javascript",
       },
     ],
-    author: { _id: "1", name: "John Doe" },
-    upVotes: 10,
+    author: {
+      _id: "1",
+      name: "John Doe",
+      image:
+        "https://static.vecteezy.com/system/resources/thumbnails/002/002/403/small/man-with-beard-avatar-character-isolated-icon-free-vector.jpg",
+    },
+    upvotes: 10,
     answers: 5,
     views: 100,
     createdAt: new Date(),
@@ -52,12 +64,21 @@ const questions = [
 ];
 
 export default async function Home({ searchParams }: SearchParams) {
-  const { query = "" } = await searchParams;
+  const { query = "", filter = "" } = await searchParams;
 
   // db fetch with this query
-  const filteredQuestions = questions.filter((question) =>
-    question.title.toLowerCase().includes(query?.toLowerCase())
-  );
+  const filteredQuestions = questions.filter((question) => {
+    const matchesQuery = query
+      ? question.title.toLowerCase().includes(query.toLowerCase())
+      : true;
+
+    const matchesFilter = filter
+      ? question.tags
+          .map((tag) => tag.name.toLowerCase())
+          .includes(filter.toLowerCase())
+      : true;
+    return matchesQuery && matchesFilter;
+  });
 
   return (
     <>
@@ -75,10 +96,10 @@ export default async function Home({ searchParams }: SearchParams) {
           route={ROUTES.HOME}
         />
       </section>
-      Home Filter
+      <HomeFilter />
       <div className="mt-10 flex w-full flex-col gap-6">
         {filteredQuestions.map((question) => (
-          <h1 key={question._id}>{question.title}</h1>
+          <QuestionCard key={question._id} question={question} />
         ))}
       </div>
     </>

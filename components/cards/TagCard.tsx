@@ -9,8 +9,9 @@ import { Badge } from "../ui/badge";
 interface TagCardProps {
   _id: string;
   name: string;
-  questions: number;
+  questions?: number;
   showCount?: boolean;
+  compact?: boolean;
 }
 
 export default function TagCard({
@@ -18,6 +19,7 @@ export default function TagCard({
   name,
   questions,
   showCount,
+  compact,
 }: TagCardProps) {
   const iconClass = getDeviconClassName(name);
   return (
@@ -25,10 +27,12 @@ export default function TagCard({
       href={ROUTES.TAGS(_id)}
       className="flex justify-between gap-2 items-center"
     >
-      <Badge className="subtle-medium background-light800_dark300 text-light400_light500 rounded-md border-none px-4 py-2 uppercase">
+      <Badge className="subtle-medium background-light800_dark300 text-light400_light500 rounded-md border-none px-4 py-2 uppercase group">
         <div className="flex items-center space-x-2">
-          <i className={`${iconClass} text-sm`}></i>
-          <span>{name}</span>
+          {!compact && <i className={`${iconClass} text-sm`}></i>}
+          <span className={`${compact && "group-hover:underline"}`}>
+            {name}
+          </span>
         </div>
       </Badge>
       {showCount && (
