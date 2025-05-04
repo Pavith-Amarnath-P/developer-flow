@@ -1,12 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { ROUTES } from "@/constants/routes";
+
+import MobileNavigation from "./MobileNavigation";
 import ModeToggle from "./ModeToggle";
 
 export default function NavBar() {
   return (
     <nav className="flex-between background-light900_dark200 fixed z-50 w-full p-6 dark:shadow-none sm:px-12 gap-5">
-      <Link href={"/"} className="flex items-center gap-1">
+      <Link href={ROUTES.HOME} className="flex items-center gap-1">
         <Image
           src="/images/site-logo.svg"
           alt="DevFlow Logo"
@@ -20,6 +23,8 @@ export default function NavBar() {
       <p>Global Search</p>
       <div className="flex-between gap-5">
         <ModeToggle />
+
+        <MobileNavigation />
       </div>
     </nav>
   );

@@ -545,17 +545,17 @@
 }
 
 @utility btn-secondary {
-  background-color: var(--light-800);
   @variant dark {
-    background-color: var(--dark-400);
+    background-color: var(--color-dark-400);
   }
+  background-color: var(--color-light-800);
 }
 
 @utility btn-tertiary {
-  background-color: var(--light-700);
   @variant dark {
-    background-color: var(--dark-300);
+    background-color: var(---color-dark-300);
   }
+  background-color: var(--color-light-700);
 }
 
 @utility no-focus {
