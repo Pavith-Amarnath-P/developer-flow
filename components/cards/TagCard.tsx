@@ -11,7 +11,6 @@ interface TagCardProps {
   name: string;
   questions: number;
   showCount?: boolean;
-  compact?: boolean;
 }
 
 export default function TagCard({
@@ -19,7 +18,6 @@ export default function TagCard({
   name,
   questions,
   showCount,
-  compact,
 }: TagCardProps) {
   const iconClass = getDeviconClassName(name);
   return (
