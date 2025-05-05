@@ -15,7 +15,7 @@ interface TagCardProps {
   compact?: boolean;
   isButton?: boolean;
   remove?: boolean;
-  handleTagRemove?: (tag: string, field: { value: string[] }) => void;
+  handleTagRemove?: () => void;
 }
 
 export default function TagCard({
