@@ -24,10 +24,6 @@ import {
 } from "../ui/form";
 import { Input } from "../ui/input";
 
-const formSchema = z.object({
-  username: z.string().min(2).max(50),
-});
-
 interface AuthFormProps<T extends FieldValues> {
   formType: "SIGN_IN" | "SIGN_UP";
   schema: ZodType<T>;
