@@ -1,14 +1,25 @@
 import Link from "next/link";
 
+import { auth } from "@/auth";
 import QuestionCard from "@/components/cards/QuestionCard";
 import HomeFilter from "@/components/filters/HomeFilter";
 import LocalSearch from "@/components/search/LocalSearch";
 import { Button } from "@/components/ui/button";
 import { ROUTES } from "@/constants/routes";
+import { api } from "@/lib/handler/api";
+import handleError from "@/lib/handler/error";
 
 interface SearchParams {
   searchParams: Promise<{ [key: string]: string }>;
 }
+
+const test = async () => {
+  try {
+    return await api.users.getAll();
+  } catch (error) {
+    return handleError(error);
+  }
+};
 
 const questions = [
   {
@@ -64,6 +75,8 @@ const questions = [
 ];
 
 export default async function Home({ searchParams }: SearchParams) {
+  const session = await auth();
+  console.log("Session", session);
   const { query = "", filter = "" } = await searchParams;
 
   // db fetch with this query

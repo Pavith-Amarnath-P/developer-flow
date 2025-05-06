@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import handleError from "@/lib/handler/error";
 import { NotFoundError, ValidationError } from "@/lib/http-errors";
 import User from "@/lib/models/user.model";
+import { dbConnect } from "@/lib/mongoose";
 import { UserSchema } from "@/lib/validations";
 import { APIErrorResponse } from "@/types/global";
 
@@ -14,6 +15,7 @@ export async function POST(request: Request) {
     if (!validatedData.success) {
       throw new ValidationError(validatedData.error.flatten().fieldErrors);
     }
+    await dbConnect();
     const user = await User.findOne({ email });
     if (!user) {
       throw new NotFoundError("User");
